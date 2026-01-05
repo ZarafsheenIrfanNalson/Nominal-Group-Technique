@@ -6,6 +6,7 @@ This project is a modern web-based Vendor Management and Analytics Dashboard des
 ### Key Features
 
 - **Overview Dashboard**
+- ![Dashboard Overview](NGT 1.png)
   - Displays key metrics such as Total Active Cost, Renewal Timeline, Upcoming Renewals, Recently Concluded items, and Monthly Spend Trends.
   - Includes donut charts, bar graphs, and line charts for quick insights.
 
