@@ -1,0 +1,116 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="main-container" style="padding-left: 3%; padding-right: 2%; outline: none; border: none;">
+  <div class="row mt-4" style="height: 100%;">
+    <!--style="height: 100%; --><!-- UPPER SECTION: Search/Filter and Add Button -->
+    <div class="col-12 mb-3">
+      <h1 id="title" style="font-style: normal; font-weight: 700; color: rgb(91, 44, 111); text-align: center; margin: 0 auto;">Analysis</h1>
+      <div class="row-container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 0px 16px 0px 14px;">
+        <div class="fields-section" style="display: flex; gap: 20px;">
+          <!-- Search Field -->
+          <div class="field" style="position: relative;">
+            <label style="display: block; margin-bottom: 5px;">Vendor Name</label>
+            <div style="position: relative;"><i aria-hidden="true" class="bi bi-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #5B2C6F;"> </i><input id="Searchfeild" onblur="SearchSubscriptionNameOnBlur()" onkeydown="SearchSubscriptionName()" type="text" placeholder="Search" style="width: 100%; padding: 8px 12px 8px 34px; border-radius: 999px; border: 1px solid #5B2C6F; font-size: 14px; outline: none;" /></div>
+          </div>
+          <!-- Status Field -->
+          <div class="field">
+            <label style="display: block; margin-bottom: 5px;">Status</label
+            ><select id="Statusoptions" style="width: 100%; padding: 8px 14px; border-radius: 999px; border: 1px solid #5B2C6F; font-size: 14px; outline: none; background-color: #ffffff; color: #5B2C6F; cursor: pointer;">
+              <option value="0">Active</option>
+              <option value="1">Inactive</option>
+              <option value="null">All</option>
+            </select>
+          </div>
+        </div>
+        <!-- Buttons Section -->
+        <div id="VeiwEditBtn" style="display: flex; gap: 10px;"><button type="button" data-bs-toggle="modal" data-bs-target="#editVendorModal" onclick="populateForm()" style="background-color: #ffffff; color: #5B2C6F; border: 1px solid #5B2C6F; border-radius: 10px; padding: 8px 18px; font-size: 14px; font-weight: 500; cursor: pointer;">Edit</button><button type="button" data-bs-toggle="modal" data-bs-target="#addVendorRecordModal" onclick="resetAddVendorRecordModal()" style="background-color: #5B2C6F; color: #ffffff; border: none; border-radius: 10px; padding: 8px 18px; font-size: 14px; font-weight: 500; cursor: pointer;">Add vendor</button></div>
+      </div>
+    </div>
+    <!-- MIDDLE SECTION: 3 Charts in a row -->
+    <div class="col-12 mb-4" style="padding-left: 5%; padding-right: 5%;">
+      <div class="row charts-row" style="height: 100%;">
+        <!-- Chart 1: Activity Count -->
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-3">
+          <div class="page-dashboard__listQuickStart-item" style="position: relative; height: 280px;">
+            <p>Activity Count</p>
+            <div class="chart-wrapper" style="height: 220px;">
+              <div class="chart-container"><canvas id="doughnut-chart-1"></canvas></div>
+              <div id="chart-legend-1" class="legend-container"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Chart 2: Amount by Vendor -->
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-3">
+          <div class="page-dashboard__listQuickStart-item" style="position: relative; height: 280px;">
+            <p>Amount by Vendor</p>
+            <div class="chart-wrapper" style="height: 220px;">
+              <div class="chart-container"><canvas id="doughnut-chart-2"></canvas></div>
+              <div id="chart-legend-2" class="legend-container"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Chart 3: Departmental Spend Trend -->
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-3">
+          <div class="page-dashboard__listQuickStart-item" style="position: relative; height: 280px;">
+            <p>Departmental Spend Trend</p>
+            <div class="chart-wrapper" style="height: 220px;">
+              <div class="chart-container" style="display: block; box-sizing: border-box; height: 230px; width: 286px;"><canvas id="department-spend-chart"></canvas></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LOWER SECTION: Full-width Table -->
+    <div class="col-12" style="padding-left: 2%; padding-right: 2%;">
+      <div class="table-wrapper">
+        <table id="Subscriptions" class="table" style="width: 100%;">
+          <thead style="background: white;">
+            <tr>
+              <th scope="col" style="display: none;">Select</th>
+              <th scope="col">Vendor Name</th>
+              <th scope="col">Account Manager Email</th>
+              <th scope="col">Subscription Amount</th>
+              <th scope="col">Activity Status</th>
+              <th scope="col" style="display: none;">vendor id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="display: none;"></td>
+              <td>Vendor A</td>
+              <td>managerA@example.com</td>
+              <td>$1,200</td>
+              <td>Active</td>
+              <td style="display: none;">1</td>
+            </tr>
+            <tr>
+              <td style="display: none;"></td>
+              <td>Vendor B</td>
+              <td>managerB@example.com</td>
+              <td>$3,500</td>
+              <td>Inactive</td>
+              <td style="display: none;">2</td>
+            </tr>
+            <tr>
+              <td style="display: none;"></td>
+              <td>Vendor C</td>
+              <td>managerC@example.com</td>
+              <td>$2,750</td>
+              <td>Active</td>
+              <td style="display: none;">3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+      <div class="pagination-container">
+        <div class="go-to-page" style="display: flex; align-items: center;"><span>Go to</span><input id="pageInput" placeholder="#" type="number" min="0" onkeydown="validateAndCallFunction()" style="height: 34px; width: 57px; border-radius: 8px; background: white; color: black; padding: 8px; border: 1px solid #ccc; margin: 0 7px; font-size: 12px;" /><span>Page</span></div>
+        <div id="paginationid" class="pagination"><a href="#" class="prev" style="text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: flex; align-items: center; color: white;">‹</a><a href="#" class="next" style="text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: flex; align-items: center; color: white;">›</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px; height: 100%;">
+  <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;"><div class="col-lg-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px;"></div></div>
+</div>
