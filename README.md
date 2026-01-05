@@ -1,42 +1,32 @@
 # Nominal-Group-Technique
-This project is a modern web-based Vendor Management and Analytics Dashboard designed to help organizations track vendor activities, subscription costs, renewals, and departmental spending through an intuitive and data-driven interface.
+## Vendor Management & Analytics Dashboard
 
-The application provides a centralized view of vendor performance and financial insights, enabling better decision-making and cost control. It features interactive dashboards, real-time analytics, and clear visualizations to monitor trends and operational status efficiently.
+This project is a modern web-based Vendor Management and Analytics Dashboard designed to help organizations track vendor activities, subscription costs, renewals, and departmental spending through an intuitive interface.
 
-🔹 Key Features
+### Key Features
 
-Overview Dashboard
+- **Overview Dashboard**
+  - Displays key metrics such as Total Active Cost, Renewal Timeline, Upcoming Renewals, Recently Concluded items, and Monthly Spend Trends.
+  - Includes donut charts, bar graphs, and line charts for quick insights.
 
-Displays key metrics such as Total Active Cost, Renewal Timeline, Upcoming Renewals, Recently Concluded items, and Monthly Spend Trends.
+- **Analysis Module**
+  - Filter vendors by name and activity status
+  - Activity counts (Completed, Pending, Overdue)
+  - Subscription amount breakdown by vendor
+  - Department-wise spend trends (HR, IT, Finance)
 
-Visual charts including donut charts, bar graphs, and line charts for quick insights.
+- **Vendor Management**
+  - Vendor listing with account manager email, subscription amount, and activity status
+  - Add and edit vendor information
 
-Analysis Module
+- **Task Tracking**
+  - Track upcoming and pending tasks with due dates
 
-Filter vendors by name and activity status.
+- **User Interface**
+  - Clean, responsive layout with sidebar navigation
+  - Easy access to Overview, Reports, Analysis, Campaign, and Tasks
 
-Analyze activity counts (Completed, Pending, Overdue).
+### Purpose
 
-View subscription amounts categorized by vendor.
+This system helps finance, procurement, and operations teams manage vendor subscriptions, monitor renewals, and analyze spending trends efficiently.
 
-Track department-wise spend trends (HR, IT, Finance) over time.
-
-Vendor Management
-
-Tabular listing of vendors with account manager details, subscription amounts, and activity status.
-
-Ability to add and edit vendor information.
-
-Task Tracking
-
-“My Tasks” section to monitor upcoming and pending tasks with due dates.
-
-User-Friendly UI
-
-Clean, responsive layout with a sidebar navigation for easy access to Overview, Reports, Analysis, Campaigns, and Tasks.
-
-Designed for clarity, usability, and quick data interpretation.
-
-🔹 Purpose
-
-The system is ideal for finance teams, procurement departments, and operations managers who need a structured way to manage vendor subscriptions, track renewals, and analyze spending patterns across departments.
