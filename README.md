@@ -2,7 +2,15 @@
 ## Vendor Management & Analytics Dashboard
 
 This project is a modern web-based Vendor Management and Analytics Dashboard designed to help organizations track vendor activities, subscription costs, renewals, and departmental spending through an intuitive interface.
+## Tech Stack
 
+- **Power Pages** – Frontend portal framework for building secure, responsive web pages
+
+- **JavaScript** – Client-side logic and interactivity
+
+- **HTML & CSS** – Custom UI layout and styling
+
+- **Power Platform Security** – Role-based access and data control
 ### Key Features
 
 - **Overview Dashboard**
